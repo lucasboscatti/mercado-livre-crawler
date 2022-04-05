@@ -5,18 +5,37 @@
 
 
 # useful for handling different item types with a single interface
-from itemadapter import ItemAdapter
-import json
+from sqlalchemy.orm import sessionmaker
+from .models import Items, create_items_table, db_connect
 
 
 class MercadoLivrePipeline:
-    def open_spider(self, spider):
-        self.file = open('items.json', 'w', encoding='utf-8')
-
-    def close_spider(self, spider):
-        self.file.close()
+    def __init__(self):
+        """
+        Initializes database connection and sessionmaker.
+        Creates items table.
+        """
+        engine = db_connect()
+        create_items_table(engine)
+        self.Session = sessionmaker(bind=engine)
 
     def process_item(self, item, spider):
-        line = json.dumps(ItemAdapter(item).asdict(), ensure_ascii=False) + "\n"
-        self.file.write(line)
+        """
+        Process the item and store to database.
+        """
+        session = self.Session()
+        instance = session.query(Items).filter_by(**item).one_or_none()
+        if instance:
+            return instance
+        offer_item = Items(**item)
+
+        try:
+            session.add(offer_item)
+            session.commit()
+        except:
+            session.rollback()
+            raise
+        finally:
+            session.close()
+
         return item

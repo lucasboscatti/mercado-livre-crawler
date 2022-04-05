@@ -23,6 +23,11 @@ class OffersSpider(scrapy.Spider):
         old_price = response.css('span.andes-money-amount__fraction::text').get()
         new_price = response.xpath('//meta[contains(@itemprop, "price")]/@content').get()
 
+        if offer_of_the_day is None:
+            offer_of_the_day = False
+        else:
+            offer_of_the_day = True
+
         products_item = MercadoLivreItem(
             product_name=name,
             product_categories=categories,
