@@ -1,4 +1,4 @@
-# Scrapy settings for merado_livre project
+# Scrapy settings for mercado_livre project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -7,14 +7,14 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'merado_livre'
+BOT_NAME = 'mercado_livre'
 
-SPIDER_MODULES = ['merado_livre.spiders']
-NEWSPIDER_MODULE = 'merado_livre.spiders'
+SPIDER_MODULES = ['mercado_livre.spiders']
+NEWSPIDER_MODULE = 'mercado_livre.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'merado_livre (+http://www.yourdomain.com)'
+#USER_AGENT = 'mercado_livre (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
@@ -45,13 +45,13 @@ ROBOTSTXT_OBEY = True
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'merado_livre.middlewares.MeradoLivreSpiderMiddleware': 543,
+#    'mercado_livre.middlewares.MercadoLivreSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'merado_livre.middlewares.MeradoLivreDownloaderMiddleware': 543,
+#    'mercado_livre.middlewares.MercadoLivreDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -63,7 +63,7 @@ ROBOTSTXT_OBEY = True
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 #ITEM_PIPELINES = {
-#    'merado_livre.pipelines.MeradoLivrePipeline': 300,
+#    'mercado_livre.pipelines.MercadoLivrePipeline': 300,
 #}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
