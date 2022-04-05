@@ -20,7 +20,7 @@ class OffersSpider(scrapy.Spider):
         best_seller = response.css('a.ui-pdp-promotions-pill-label__target::text').getall()
         offer_of_the_day = response.css('div.ui-pdp-promotions-pill-label::text').get()
         discount = response.css('span.andes-money-amount__discount::text').get()
-        old_price = response.css('span.andes-visually-hidden::text').get()
+        old_price = response.css('span.andes-money-amount__fraction::text').get()
         new_price = response.xpath('//meta[contains(@itemprop, "price")]/@content').get()
 
         products_item = MercadoLivreItem(
@@ -29,7 +29,7 @@ class OffersSpider(scrapy.Spider):
             best_seller=best_seller,
             offer_of_the_day=offer_of_the_day,
             product_discount=discount,
-            product_old_price='.'.join([price for price in old_price.strip().split() if price.isdigit()]),
+            product_old_price=old_price,
             product_new_price=new_price,
         )
 
