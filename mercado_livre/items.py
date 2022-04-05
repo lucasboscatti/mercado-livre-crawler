@@ -8,7 +8,6 @@ import scrapy
 
 class MercadoLivreItem(scrapy.Item):
     # define the fields for your item here like:
-    # name  ()
     product_name = scrapy.Field()
     product_categories = scrapy.Field()
     best_seller = scrapy.Field() 
