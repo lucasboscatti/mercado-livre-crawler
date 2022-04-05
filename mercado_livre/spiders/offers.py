@@ -10,9 +10,9 @@ class OffersSpider(scrapy.Spider):
         for product_link in response.css('a.promotion-item__link-container::attr(href)'):
             yield response.follow(product_link, callback=self.parse_product)
             
-        # next_page = response.xpath('//a[contains(@title, "Próxima")]/@href').get()
-        # if next_page:
-        #     yield scrapy.Request(next_page, callback=self.parse)
+        next_page = response.xpath('//a[contains(@title, "Próxima")]/@href').get()
+        if next_page:
+            yield scrapy.Request(next_page, callback=self.parse)
     
     def parse_product(self, response):
         name = response.css('h1.ui-pdp-title::text').get()
