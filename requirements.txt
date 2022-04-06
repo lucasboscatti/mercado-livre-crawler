@@ -16,6 +16,7 @@ itemloaders==1.0.4
 jmespath==1.0.0
 lxml==4.8.0
 parsel==1.6.0
+pkg_resources==0.0.0
 Protego==0.2.1
 psycopg2==2.9.3
 pyasn1==0.4.8
@@ -30,10 +31,10 @@ requests-file==1.5.1
 Scrapy==2.6.1
 service-identity==21.1.0
 six==1.16.0
-SQLAlchemy==1.4.34
+SQLAlchemy==1.4.35
 tldextract==3.2.0
 Twisted==22.2.0
-typing-extensions==4.1.1
+typing_extensions==4.1.1
 urllib3==1.26.9
 w3lib==1.22.0
 zope.interface==5.4.0
