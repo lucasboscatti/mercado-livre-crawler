@@ -16,7 +16,6 @@ itemloaders==1.0.4
 jmespath==1.0.0
 lxml==4.8.0
 parsel==1.6.0
-pkg_resources==0.0.0
 Protego==0.2.1
 psycopg2==2.9.3
 pyasn1==0.4.8
