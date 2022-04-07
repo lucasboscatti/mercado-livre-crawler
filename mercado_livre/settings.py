@@ -66,21 +66,6 @@ ITEM_PIPELINES = {
    'mercado_livre.pipelines.MercadoLivrePipeline': 300,
 }
 
-import os
-from decouple import AutoConfig
-
-CONFIG_DIR = os.path.join(os.path.dirname(__file__))
-config = AutoConfig(search_path=CONFIG_DIR)
-
-DATABASE = {
-    'drivername': 'postgresql',
-    'host': config('POSTGRES_HOST'),
-    'port': config('POSTGRES_PORT'),
-    'username': config('POSTGRES_USER'),
-    'password': config('POSTGRES_PASS'),    
-    'database': config('POSTGRES_DB'),
-}
-
 LOG_LEVEL = "INFO"
 
 # Enable and configure the AutoThrottle extension (disabled by default)

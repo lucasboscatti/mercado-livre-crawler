@@ -1,9 +1,13 @@
-from sqlalchemy import Column, ARRAY, Boolean, String, create_engine
+from sqlalchemy import Column, ARRAY, Boolean, String, create_engine, DateTime, sql 
 from sqlalchemy.engine.base import Engine
 from sqlalchemy.engine.url import URL
 from sqlalchemy.ext.declarative import declarative_base
 
-import mercado_livre.settings
+import os
+from decouple import AutoConfig
+
+CONFIG_DIR = os.path.join(os.path.dirname(__file__))
+config = AutoConfig(search_path=CONFIG_DIR)
 
 DeclarativeBase = declarative_base()
 
@@ -13,7 +17,7 @@ def db_connect() -> Engine:
     Creates database connection using database settings from settings.py.
     Returns sqlalchemy engine instance
     """
-    return create_engine(URL(**mercado_livre.settings.DATABASE))
+    return create_engine(config('DATABASE_URL'))
 
 
 def create_items_table(engine: Engine):
@@ -37,3 +41,4 @@ class Items(DeclarativeBase):
     product_discount = Column("discount", String)
     product_old_price = Column("old_price", String)
     product_new_price =  Column("new_price", String)
+    date = Column(DateTime(timezone=True), default=sql.func.now())
