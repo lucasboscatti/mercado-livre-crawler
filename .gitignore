@@ -67,6 +67,9 @@ instance/
 
 # Scrapy stuff:
 .scrapy
+twistd.pid
+dbs/
+logs/
 
 # Sphinx documentation
 docs/_build/
