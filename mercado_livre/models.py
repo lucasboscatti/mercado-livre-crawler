@@ -8,7 +8,7 @@ from decouple import config
 import datetime
 
 
-DATABASE_URL = config('DATABASE_URL').replace("postgres://", "postgresql://", 1)
+DATABASE_URL = config("DATABASE_URL").replace("postgres://", "postgresql://", 1)
 DeclarativeBase = declarative_base()
 
 
@@ -40,5 +40,7 @@ class Items(DeclarativeBase):
     offer_of_the_day = Column(" offer_of_the_day", Boolean)
     product_discount = Column("discount", String)
     product_old_price = Column("old_price", String)
-    product_new_price =  Column("new_price", String)
-    date = Column(DateTime(timezone=False), default=datetime.datetime.now().strftime('%m/%d/%Y'))
+    product_new_price = Column("new_price", String)
+    date = Column(
+        DateTime(timezone=False), default=datetime.datetime.now().strftime("%m/%d/%Y")
+    )
