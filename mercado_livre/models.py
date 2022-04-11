@@ -1,6 +1,5 @@
 from sqlalchemy import Column, ARRAY, Boolean, String, create_engine, DateTime
 from sqlalchemy.engine.base import Engine
-from sqlalchemy.engine.url import URL
 from sqlalchemy.ext.declarative import declarative_base
 
 
