@@ -3,13 +3,12 @@ from sqlalchemy.engine.base import Engine
 from sqlalchemy.engine.url import URL
 from sqlalchemy.ext.declarative import declarative_base
 
-import os
-from decouple import AutoConfig
+
+from decouple import config
 import datetime
 
-CONFIG_DIR = os.path.join(os.path.dirname(__file__))
-config = AutoConfig(search_path=CONFIG_DIR)
 
+DATABASE_URL = config('DATABASE_URL').replace("postgres://", "postgresql://", 1)
 DeclarativeBase = declarative_base()
 
 
@@ -18,7 +17,7 @@ def db_connect() -> Engine:
     Creates database connection using database settings from settings.py.
     Returns sqlalchemy engine instance
     """
-    return create_engine(config('DATABASE_URL'))
+    return create_engine(DATABASE_URL)
 
 
 def create_items_table(engine: Engine):
