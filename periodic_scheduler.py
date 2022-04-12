@@ -16,7 +16,7 @@ if __name__ == "__main__":
     subprocess.run("scrapyd-deploy", shell=True, universal_newlines=True)
     scheduler = TwistedScheduler(timezone=pytz.timezone("America/Sao_Paulo"))
     # cron trigger that schedules job every every miday at 12:00
-    scheduler.add_job(send_request, "cron", day_of_week="*", hour="12", minute="0")
+    scheduler.add_job(send_request, "cron", day_of_week="*", minute="*/30")
     # start the scheduler
     scheduler.start()
     reactor.run()
