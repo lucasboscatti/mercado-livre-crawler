@@ -1,2 +1,3 @@
-# data_engineering_project_01
-My first data engineering project
+# mercado-livre-crawler
+
+Este é um projeto de nível iniciante para a área de engenharia de dados. O objetivo é extrair dados das ofertas de produtos do site [Mercado Livre](https://www.mercadolivre.com.br) e armazená-los em um banco de dados [PostgreSQL](https://www.postgresql.org/) com um mesmo schema. Na branch [docker-version](https://github.com/lucasboscatti/mercado-livre-crawler/tree/docker_version) está implementado o código para ser executado localmente em um container [Docker](https://www.docker.com/) com orquestramento do crawler e do banco de dados feito pelo [Docker Compose](https://docs.docker.com/compose/). Na branch principal está o código para ser executado e hospedado na plataforma [Heroku](https://www.heroku.com/). O banco de dados também está hospedado nesta plataforma com um limite de 10.000 registros.
