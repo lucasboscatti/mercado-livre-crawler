@@ -2,6 +2,15 @@
 
 Versão docker do crawler do Mercado Livre para ser executada localmente.
 
+## Requisitos
+
+- [docker](https://www.docker.com/)
+
+- [docker-compose](https://docs.docker.com/compose/install/)
+
+- [postgresql](https://www.postgresql.org/)
+
+
 ## Instalação
 
 1) Clone esta branch do repositório
