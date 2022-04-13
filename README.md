@@ -16,7 +16,7 @@ Versão docker do crawler do Mercado Livre para ser executada localmente.
 1) Clone esta branch do repositório
 
 ```
-$ git clone -b docker-version https://github.com/lucasboscatti/mercado-livre-crawler
+$ git clone -b docker_version https://github.com/lucasboscatti/mercado-livre-crawler
 ```
 
 
