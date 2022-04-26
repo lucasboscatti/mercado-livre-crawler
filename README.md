@@ -4,3 +4,6 @@ Este é um projeto de nível iniciante para a área de engenharia de dados. O ob
 
 ## Artigo
 Escrevi um tutorial no [Medium](https://medium.com/@lucasboscatti/agendando-a-execu%C3%A7%C3%A3o-de-um-crawler-no-heroku-de-forma-gratuita-337561c87d92) com um passo a passo para realizar o deploy de um Crawler com Scrapy no Heroku.
+
+## Análise dos dados
+[Neste repositório](https://github.com/lucasboscatti/mercado-livre-data-analysis) fiz uma limpeza e análise dos dados coletados por este crawler.
